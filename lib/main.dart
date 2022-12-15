@@ -4,7 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
 void main() {
-  runApp(const MaterialApp(home: HomePage()));
+  runApp(const Home());
+}
+
+class Home extends StatelessWidget{
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: HomePage()
+    );
+  }
 }
 
 class HomePage extends StatefulWidget {
@@ -68,10 +79,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   //Como o refresh nao será tao
-  //rapido assin usremos uma Future
-  //Ao arrastar a tela para baixo
+  //rapido assim usaremos uma Future
+  //Ao arrastar a tela do celular para baixo
   //atualiza a lista de tarefas não
-  //concluidas colocando como primeiro na lista.
+  //concluidas colocando como primeiras na lista.
   Future<Null> _refresh() async {
     await Future.delayed(const Duration(seconds: 1));
 
